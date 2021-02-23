@@ -1,0 +1,29 @@
+//PairWise LinkedList Swap
+
+import java.util.*;
+
+/**
+ * class LLNode {
+ *   int val;
+ *   LLNode next;
+ * }
+ */
+class Solution {
+        
+        
+    public LLNode solve(LLNode node) {
+        
+        if(node == null || node.next==null)
+        {
+            return node;
+        }
+
+            LLNode head=node.next;
+            LLNode next = head.next;
+            head.next = node;
+            head.next.next = solve(next);
+            
+        return head; 
+    }
+    
+}
